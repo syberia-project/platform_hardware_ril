@@ -42,11 +42,13 @@ ifeq (foo,foo)
       libcutils libutils
   LOCAL_CFLAGS += -DRIL_SHLIB
   LOCAL_MODULE:= libreference-ril
+  LOCAL_SANITIZE := never
   include $(BUILD_SHARED_LIBRARY)
 else
   #build executable
   LOCAL_SHARED_LIBRARIES += \
       libril
   LOCAL_MODULE:= reference-ril
+  LOCAL_SANITIZE := never
   include $(BUILD_EXECUTABLE)
 endif
